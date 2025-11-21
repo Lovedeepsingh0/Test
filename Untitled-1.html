@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Good Morning ☀️💛</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #fff4d2, #ffe1e1, #e0f0ff);
+      background-size: 300% 300%;
+      animation: bgMove 12s ease infinite;
+      padding: 20px;
+    }
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card {
+      background: #ffffffd9;
+      padding: 28px 26px;
+      border-radius: 24px;
+      width: 90%;
+      max-width: 430px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .heart { width: 110px; height: 110px; background: red; margin: 0 auto 18px; transform: rotate(-45deg); position: relative; animation: heartbeat 1.2s infinite; }
+    .heart::before, .heart::after { content: ""; width: 110px; height: 110px; background: red; border-radius: 50%; position: absolute; }
+    .heart::before { top: -55px; left: 0; }
+    .heart::after { left: 55px; top: 0; }
+    @keyframes heartbeat { 0%{transform:scale(1)rotate(-45deg);} 25%{transform:scale(1.12)rotate(-45deg);} 40%{transform:scale(1)rotate(-45deg);} 60%{transform:scale(1.12)rotate(-45deg);} 100%{transform:scale(1)rotate(-45deg);} }
+
+    h1 { font-size: 25px; margin-bottom: 10px; background: linear-gradient(to right,#ff4d6d,#6a5af9); -webkit-background-clip:text; color:transparent; }
+
+    .tap-box { margin-top: 16px; cursor: pointer; background:#ffe6ef; padding:10px 14px; border-radius:12px; display:inline-block; border:1px solid #ffb4c7; color:#ff4c75; font-size:14px; transition:0.3s; }
+    .tap-box:hover { background:#ffd9e8; }
+
+    #hiddenMessage { margin-top:16px; display:none; font-size:14px; color:#444; line-height:1.5; }
+
+    .love-bar { margin: 20px auto; width: 80%; background: #eee; height: 14px; border-radius: 10px; overflow: hidden; }
+    .love-fill { height: 100%; width: 97%; background: linear-gradient(90deg,#ff4d6d,#ff9a9e); animation: loveGlow 2.5s infinite alternate; }
+    @keyframes loveGlow { from{opacity:0.7;} to{opacity:1;} }
+
+    audio { margin-top: 20px; width: 100%; border-radius: 8px; }
+    .footer { margin-top: 16px; font-size:12px; color:#888; }
+  
+
+    /* Floating heart animations */
+    .floating-heart {
+      position: absolute;
+      font-size: 22px;
+      opacity: 0.8;
+      animation: floatUp 6s linear infinite;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(40px) scale(0.8); opacity: 0; }
+      20% { opacity: 1; }
+      100% { transform: translateY(-180px) scale(1.4); opacity: 0; }
+    }
+
+    /* Glow animation for heading */
+    h1 {
+      animation: glowPulse 3s ease-in-out infinite;
+    }
+    @keyframes glowPulse {
+      0% { text-shadow: 0 0 4px rgba(255, 70, 100, 0.4); }
+      50% { text-shadow: 0 0 12px rgba(255, 70, 100, 0.8); }
+      100% { text-shadow: 0 0 4px rgba(255, 70, 100, 0.4); }
+    }
+
+    /* Button bounce animation */
+    .tap-box {
+      animation: softBounce 2.2s ease infinite;
+    }
+    @keyframes softBounce {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+      100% { transform: translateY(0); }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Floating hearts around card -->
+    <div class="floating-heart" style="left:20px; top:340px; animation-delay:0s;">❤️</div>
+    <div class="floating-heart" style="left:80px; top:360px; animation-delay:1s;">💗</div>
+    <div class="floating-heart" style="left:140px; top:350px; animation-delay:2s;">💖</div>
+    <div class="floating-heart" style="left:200px; top:370px; animation-delay:1.4s;">💓</div>
+    <div class="floating-heart" style="left:260px; top:360px; animation-delay:0.6s;">💕</div>
+
+  <div class="card">
+    <h1>Good Morning ☀️💛</h1>
+    <div class="heart"></div>
+
+    <div class="tap-box" onclick="reveal()">Tap to Reveal Your Message 💌</div>
+
+    <div id="hiddenMessage">
+      Good luck for today's exam — you’re absolutely going to smash it. 💪📚✨<br><br>
+Remember: it’s not the exam testing you… it’s **you testing the exam**. 😎🔥<br><br>
+You’ve studied, you’ve worked hard, and now it’s your time to shine. I believe in you more than your calculator believes in itself. 🤣<br><br>
+And the funniest part?<br>
+You don’t even realise how adorable you are when you’re stressed and serious 😆💛. 😆💛
+    </div>
+
+    <!-- Animated Encouragement Text -->
+    <div style="margin-top:18px; font-size:14px; color:#555; animation: fadeInUp 2s ease infinite alternate;">
+      🌟 Keep going — your hard work is loading… 100% success incoming! 🌟
+    </div>
+
+    <style>
+      @keyframes fadeInUp {
+        from { opacity: 0.4; transform: translateY(6px); }
+        to { opacity: 1; transform: translateY(-2px); }
+      }
+    </style>
+
+    <div class="love-bar""><div class="love-fill"></div></div>
+
+    <audio controls>
+      <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Komiku/It_just_got_light/Komiku_-_03_-_Friends.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="footer">Share it if you want… it's made to make someone smile 😄💗</div>
+  </div>
+
+  <script>
+    function reveal(){ document.getElementById('hiddenMessage').style.display='block'; }
+  </script>
+</body>
+</html>
